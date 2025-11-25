@@ -155,33 +155,6 @@ Este exemplo ordena as pessoas primeiro por nome (alfabeticamente) e depois por 
 
 Implemente o que está comentado para obter a resolução correta!
 
-## lower_bound e upper_bound
-
-Além de buscar um elemento exato, existem situações em que você quer encontrar a posição onde um valor deveria ser inserido, ou contar quantas vezes um valor aparece em um array ordenado. Para isso, a STL fornece duas funções úteis:
-
-- **`lower_bound()`**: retorna um iterador para o primeiro elemento que é **maior ou igual** ao valor buscado
-- **`upper_bound()`**: retorna um iterador para o primeiro elemento que é **estritamente maior** que o valor buscado
-
-A diferença entre elas permite contar quantas vezes um valor aparece: `upper_bound(x) - lower_bound(x)`.
-
-```cpp
-  ll arr[] = {0, 0, 1, 1, 2, 4, 4, 6, 7, 7, 7, 8, 12, 15, 21, 21};
-  ll n = sizeof(arr) / sizeof(arr[0]);
-  ll a = lower_bound(arr, arr + n, 4) - arr;
-  ll b = upper_bound(arr, arr + n, 4) - arr;
-  cout << "(array)  count number of 4's is: " << b - a << '\n';
-
-  vll v = {0, 0, 1, 1, 2, 4, 4, 6, 7, 7, 7, 8, 12, 15, 21, 21};
-  a = lower_bound(v.begin(), v.end(), 4) - v.begin();
-  b = upper_bound(v.begin(), v.end(), 4) - v.begin();
-  cout << "(vector) count number of 4's is: " << b - a << '\n';
-```
-
-Neste exemplo, `lower_bound()` retorna o índice 5 (posição do primeiro `4`) e `upper_bound()` retorna o índice 7 (posição logo após o último `4`). Portanto, `7 - 5 = 2`, que é o número de `4`s no array. Ambas as funções funcionam com arrays e vetores.
-
-## Problema! haybales.md
-
-
 ## Estrutura do algoritmo binary search
 
 A busca binária é um algoritmo fundamental para encontrar um elemento em uma **array ordenada**. Ela funciona dividindo o problema pela metade a cada iteração, reduzindo o tempo de busca de O(n) para O(log n).
@@ -237,9 +210,38 @@ $$
 
 Assim, `mid = left + (right - left) / 2` garante que nunca haverá overflow, pois estamos calculando a diferença antes de dividir.
 
+
+## lower_bound e upper_bound
+
+Além de buscar um elemento exato, existem situações em que você quer encontrar a posição onde um valor deveria ser inserido, ou contar quantas vezes um valor aparece em um array ordenado. Para isso, a STL fornece duas funções úteis:
+
+- **`lower_bound()`**: retorna um iterador para o primeiro elemento que é **maior ou igual** ao valor buscado
+- **`upper_bound()`**: retorna um iterador para o primeiro elemento que é **estritamente maior** que o valor buscado
+
+A diferença entre elas permite contar quantas vezes um valor aparece: `upper_bound(x) - lower_bound(x)`.
+
+```cpp
+  ll arr[] = {0, 0, 1, 1, 2, 4, 4, 6, 7, 7, 7, 8, 12, 15, 21, 21};
+  ll n = sizeof(arr) / sizeof(arr[0]);
+  ll a = lower_bound(arr, arr + n, 4) - arr;
+  ll b = upper_bound(arr, arr + n, 4) - arr;
+  cout << "(array)  count number of 4's is: " << b - a << '\n';
+
+  vll v = {0, 0, 1, 1, 2, 4, 4, 6, 7, 7, 7, 8, 12, 15, 21, 21};
+  a = lower_bound(v.begin(), v.end(), 4) - v.begin();
+  b = upper_bound(v.begin(), v.end(), 4) - v.begin();
+  cout << "(vector) count number of 4's is: " << b - a << '\n';
+```
+
+Neste exemplo, `lower_bound()` retorna o índice 5 (posição do primeiro `4`) e `upper_bound()` retorna o índice 7 (posição logo após o último `4`). Portanto, `7 - 5 = 2`, que é o número de `4`s no array. Ambas as funções funcionam com arrays e vetores.
+
+## Problema! haybales.md
+
+
 ### Exercícios
 
 - [Codeforces 1873E](https://codeforces.com/contest/1873/problem/E)
+- [Problemas selecionados da maratona UFMG](https://docs.google.com/spreadsheets/d/1QQ1QvYNDPKv9Aqh5c2VL_KCtpqASDWeRcLkyyXlPM0M/edit?gid=1907459156#gid=1907459156)
 
 # Referências
 
