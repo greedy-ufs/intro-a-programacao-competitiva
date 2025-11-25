@@ -1,16 +1,5 @@
 # Notas de Aula sobre busca Binária
 
-Tópicos:
-- Introdução ao sorting
-  - Explicar o que é sort, porque utilizar suas utilidades e porque a otimização é necessária
-  - Explicar brevemente os algoritmos mergesort, quicksort etc.
-  - Explicar como fazer os diversos tipos de sort
-- Passar a explicar a ideia principal do que é binary search
-  - A estrutura do seu algoritmo
-  - Porque utilizar left + right left ao invés de apenas left + right
-- Explicar lower_bound e upper_bound
-A ideia seria explicar visualmente no quadro?
-
 ## Uma breve (!!!) introdução aos algoritmos de ordenação
 
 Antes de tudo, é importante entender por que é relevante conhecer os algoritmos de ordenação. Eles são fundamentais porque diferentes algoritmos podem demandar mais ou menos tempo de execução. E como tempo é dinheiro, torna-se essencial compreender essas otimizações para evitar desperdício de processamento. Um exemplo disso ocorre em ambientes como as funções Lambda da AWS, que podem executar processos de ordenação, como a classificação de usuários em um placar (scoreboard) dos melhores jogadores, onde um algoritmo ineficiente pode gerar custos desnecessários.
